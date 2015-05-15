@@ -1,0 +1,20 @@
+<h1>List of Bands</h1>
+
+<% if @all_bands.any? %>
+  <ul>
+    <% @all_bands.each do |band| %>
+      <li>
+        <a href="/bands/<%= band.id %>"><%= band.name %></a>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<h4>Add a Band:</h4>
+<form action="/bands/new" method="post">
+  <div class="form-group">
+    <input id="band_name" name="band_name" type="text" class="form-control" placeholder="Band Name" autofocus required>
+   </div>
+  <button id="band_save" type="submit" class="btn btn-info">Save</button>
+</form>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Band-O-Rama</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="first">
+  </div>
+  <div id="wrap" class="container">
+    <%= yield %>
+  </div>
+</body>
+<footer>
+  <div id ="footer">
+    <div class ="row">
+      <div class="text-center">
+        <div class="col-md-6">
+          <a id='manage_bands' href="/bands">Manage Bands</a>
+        </div>
+        <div class="col-md-6">
+          <a id='manage_venues' href="/venues">Manage Venues</a>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="row">
+      <div class="text-center">
+        <div class="col-md-6">
+          <a id='add_category' href="/categories/new">Add a Band</a>
+        </div>
+        <div class="col-md-6">
+          <a id='add_recipe' href="/recipes/new">Add a Venue</a>
+        </div>
+      </div>
+    </div> -->
+    <div class="row">
+      <div class="text-center">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+          <a id='reset' href="/reset">Reset</a>
+        </div>
+        <div class="col-md-4">
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</html>
