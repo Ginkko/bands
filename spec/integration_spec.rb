@@ -24,3 +24,15 @@ describe 'Adding a venue path', :type => :feature do
     expect(page).to have_content('Amphitheatre-O-Rama')
   end
 end
+
+describe 'Adding a band to a venue path', :type => :feature do
+  it 'Starts on the bands page. Lets a user click on a band to see details for that band. Lets a user add a venue to that band' do
+    venue = Venue.create(name: 'Amphitheatre-O-Rama')
+    band = Band.create(name: 'Poison Sauce')
+    visit '/bands'
+    click_on 'Poison Sauce'
+    check(venue.id)
+    click_button 'add_venues'
+    expect(page).to have_content('Amphitheatre-O-Rama')
+  end
+end
