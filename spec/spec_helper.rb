@@ -6,6 +6,7 @@ require 'band'
 require 'venue'
 require 'pry'
 require 'pg'
+require 'shoulda-matchers'
 
 RSpec.configure do |config|
   config.before(:each) do

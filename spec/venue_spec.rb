@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Venue do
+  it { should have_and_belong_to_many(:bands) }
+
   it 'ensures the venue is not a duplicate' do
     Venue.create(name: 'Amphitheatre-O-Rama')
     venue = Venue.new(name: 'Amphitheatre-O-Rama')

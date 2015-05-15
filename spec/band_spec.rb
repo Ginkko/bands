@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Band do
+  it { should have_and_belong_to_many(:venues) }
+
   it 'ensures the band is not a duplicate' do
     Band.create(name: 'Poison Sauce')
     band = Band.new(name: 'Poison Sauce')
