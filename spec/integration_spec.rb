@@ -48,3 +48,22 @@ describe 'Adding a venue to a band path', :type => :feature do
     expect(page).to have_content('Poison Sauce')
   end
 end
+
+describe 'Updating and Deleting a Band from the list of bands', :type => :feature do
+  it 'deletes a band' do
+    band_0 = Band.create(name: 'Spam Kings')
+    band_1 = Band.create(name: 'Lard Dudes')
+    visit "/bands/#{band_1.id}"
+    expect(page).to have_content(band_1.name)
+    click_button 'delete_band'
+    expect(page).to_not have_content("#{band_1.name}")
+    expect(page).to have_content(band_0.name)
+  end
+  it 'updates the band name' do
+    band = Band.create(name: 'Milk Men')
+    visit "/bands/#{band.id}"
+    fill_in 'new_band_name', with: 'Sour Cream Crazies'
+    click_button 'update_band'
+    expect(page).to have_content 'Sour Cream Crazies'
+  end
+end

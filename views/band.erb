@@ -27,3 +27,20 @@
       <button id="add_venues" class="btn btn-info" type="submit" name="add_venues">Save</button>
     </form>
   <% end %>
+
+  <form action="/bands/<%= @band.id %>/delete" method="post">
+    <div class="form-group">
+      <p class="text-center">Delete this Band:</p>
+      <input type="hidden" name="_method" value="delete">
+    </div>
+    <button class="btn btn-danger" type="submit" id="delete_band" name="delete_band">Delete</button>
+  </form>
+
+  <form action="/bands/<%= @band.id %>/update" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <div class="form-group">
+      <h4>Update this Band's name</h4>
+      <input id="new_band_name" name="new_band_name" type="text" autofocus>
+    </div>
+    <button class="btn btn-warning" type="submit" id="update_band" name="update_band">Update</button>
+  </form>
