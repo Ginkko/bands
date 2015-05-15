@@ -32,7 +32,7 @@ post '/bands/new' do
     redirect to '/bands'
   else
     @object_with_errors = band
-    @path = '/bands/new'
+    @path = '/bands'
     erb :errors
   end
 end
@@ -76,7 +76,7 @@ post '/venues/new' do
     redirect to '/venues'
   else
     @object_with_errors = venue
-    @path = '/venues/new'
+    @path = '/venues'
     erb :errors
   end
 end
