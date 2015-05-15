@@ -1,0 +1,29 @@
+<h1><%= @venue.name %></h1>
+
+  <% if @bands.any? %>
+    <h4>Bands this Venue has hosted:</h4>
+    <ul>
+      <% @bands.each do |band| %>
+        <li>
+          <a href="/bands/<%= band.id %>"><%= band.name %></a>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <% if @all_bands.any? %>
+    <form action="/venues/<%= @venue.id %>/add/band" method="post">
+      <h4>Select the Bands for this Venue:</h4>
+      <input type="hidden" name="_method" value="patch">
+        <div class="form-group">
+          <ul>
+          <% @all_bands.each do |band| %>
+            <div class="checkbox">
+              <input type="checkbox" name="band_id[]" id="<%= band.id %>" value="<%= band.id %>"><%= band.name %></input>
+            </div>
+          <% end %>
+        </ul>
+      </div>
+      <button id="add_bands" class="btn btn-info" type="submit" name="add_bands">Save</button>
+    </form>
+  <% end %>

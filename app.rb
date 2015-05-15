@@ -69,3 +69,20 @@ post '/venues/new' do
     erb :errors
   end
 end
+
+get '/venues/:id' do
+  @venue = Venue.find(params['id'])
+  @bands = @venue.bands
+  @all_bands = Band.all
+  erb :venue
+end
+
+patch '/venues/:id/add/band' do
+  @venue = Venue.find(params['id'])
+  added_bands = Band.find(params['band_id'])
+  added_bands.each do |band|
+    @venue.bands.push(band)
+  end
+  @bands = @venue.bands
+  redirect to "/venues/#{params['id']}"
+end
