@@ -1,0 +1,20 @@
+<h1>List of Venues</h1>
+
+<% if @all_venues.any? %>
+  <ul>
+    <% @all_venues.each do |venue| %>
+      <li>
+        <a href="/venues/<%= venue.id %>"><%= venue.name %></a>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<h4>Add a Venue:</h4>
+<form action="/venues/new" method="post">
+  <div class="form-group">
+    <input id="venue_name" name="venue_name" type="text" class="form-control" placeholder="Venue Name" autofocus required>
+   </div>
+  <button id="venue_save" type="submit" class="btn btn-info">Save</button>
+</form>

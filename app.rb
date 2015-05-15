@@ -36,3 +36,19 @@ post '/bands/new' do
     erb :errors
   end
 end
+
+get '/venues' do
+  @all_venues = Venue.all
+  erb :venues
+end
+
+post '/venues/new' do
+  venue = Venue.new(name: params['venue_name'])
+  if venue.save
+    redirect to '/venues'
+  else
+    @object_with_errors = venue
+    @path = '/venues/new'
+    erb :errors
+  end
+end
