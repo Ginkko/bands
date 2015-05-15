@@ -3,8 +3,8 @@ html,
 body {
   height: 100%;
   opacity: .9;
-  /*color: #fff;*/
-  /*background-image: url("img/box.jpg");*/
+  color: #fff;
+  background-image: url("img/waves.jpg");
   /* The html and body elements cannot have any padding or margin. */
 }
 
@@ -31,4 +31,9 @@ h1 {
   margin: 40px 0 20px;
   border-bottom: 1px solid #eee;
   text-align: center;
+}
+
+.form-bottom {
+  position: absolute;
+  bottom: 90px;
 }

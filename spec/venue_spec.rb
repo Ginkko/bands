@@ -6,4 +6,10 @@ describe Venue do
     venue = Venue.new(name: 'Amphitheatre-O-Rama')
     expect(venue.save).to eq(false)
   end
+
+  it('will change the name of the venue to titlecase on creation') do
+   venue = Venue.create({name: "janus landing"})
+   expect(venue.name).to eq("Janus Landing")
+ end
+
 end
