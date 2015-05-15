@@ -16,5 +16,5 @@ These commands will run bundler to install all necessary gems, start postgres, c
 
 
 Known errors:
-  A configuration error caused the .bundle package to install in the local folder when developing the app. This should not interfere with functionality, but may cause unnecessary file bloat on clone/pull.
+  - A configuration error caused the .bundle package to install in the local folder when developing the app. This should not interfere with functionality, but may cause unnecessary file bloat on clone/pull.
 MIT License
